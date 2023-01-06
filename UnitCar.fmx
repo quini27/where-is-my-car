@@ -1,0 +1,527 @@
+object Form5: TForm5
+  Left = 0
+  Top = 0
+  Caption = 'Form5'
+  ClientHeight = 587
+  ClientWidth = 763
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 3
+  object Layout1: TLayout
+    Align = Client
+    Size.Width = 513.000000000000000000
+    Size.Height = 587.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    object Memo1: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      Caret.Color = claKhaki
+      DataDetectorTypes = []
+      ReadOnly = True
+      StyledSettings = [Family, Style, FontColor]
+      TextSettings.Font.Size = 11.000000000000000000
+      Align = Top
+      Position.Y = 74.000000000000000000
+      Size.Width = 513.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Viewport.Width = 505.000000000000000000
+      Viewport.Height = 16.000000000000000000
+    end
+    object PanelBottom: TPanel
+      Align = MostBottom
+      Position.Y = 531.000000000000000000
+      Size.Width = 513.000000000000000000
+      Size.Height = 56.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object Switch1: TSwitch
+        Align = MostRight
+        IsChecked = False
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Position.X = 459.000000000000000000
+        Position.Y = 15.000000000000000000
+        Size.Width = 44.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        OnSwitch = Switch1Switch
+      end
+      object Label1: TLabel
+        Align = Right
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 377.000000000000000000
+        Size.Width = 82.000000000000000000
+        Size.Height = 56.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 10.000000000000000000
+        TextSettings.HorzAlign = Center
+        Text = 'Loc sensor'
+        TabOrder = 1
+      end
+      object AnchorBtn: TSpeedButton
+        Align = MostLeft
+        Enabled = False
+        StyledSettings = [Family, Style, FontColor]
+        Images = ImageList1
+        ImageIndex = 0
+        Margins.Left = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 4.000000000000000000
+        Size.Width = 84.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'anchor location'
+        TextSettings.Font.Size = 10.000000000000000000
+        TextSettings.WordWrap = True
+        OnClick = AnchorBtnClick
+      end
+      object ClearBtn: TSpeedButton
+        Align = Left
+        Enabled = False
+        StyledSettings = [Family, Style, FontColor]
+        Images = ImageList1
+        ImageIndex = 2
+        Position.X = 89.000000000000000000
+        Position.Y = 4.000000000000000000
+        Size.Width = 88.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'clear location'
+        TextSettings.Font.Size = 10.000000000000000000
+        TextSettings.WordWrap = True
+        OnClick = ClearBtnClick
+      end
+    end
+    object PanelCom: TPanel
+      Align = Top
+      Position.Y = 48.000000000000000000
+      Size.Width = 563.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      Visible = False
+      TabOrder = 2
+      object EditDestLong: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = MostRight
+        TabOrder = 0
+        Text = '0.0'
+        TextSettings.Font.Family = 'Arial'
+        Position.X = 500.000000000000000000
+        Position.Y = 8.000000000000000000
+        Margins.Right = 3.000000000000000000
+        Size.Width = 60.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Style, FontColor]
+      end
+      object EditDestlat: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Right
+        TabOrder = 1
+        Text = '0.0'
+        TextSettings.Font.Family = 'Arial'
+        Position.X = 437.000000000000000000
+        Position.Y = 8.000000000000000000
+        Margins.Right = 3.000000000000000000
+        Size.Width = 60.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Style, FontColor]
+      end
+      object EditOriginLong: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Right
+        TabOrder = 2
+        Text = '0.0'
+        TextSettings.Font.Family = 'Arial'
+        Position.X = 369.000000000000000000
+        Position.Y = 8.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Size.Width = 60.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Style, FontColor]
+      end
+      object EditOriginLat: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Right
+        TabOrder = 3
+        Text = '0.0'
+        TextSettings.Font.Family = 'Arial'
+        Position.X = 306.000000000000000000
+        Position.Y = 8.000000000000000000
+        Margins.Right = 3.000000000000000000
+        Size.Width = 60.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Style, FontColor]
+      end
+      object GoBtn: TButton
+        Align = Right
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Top = 4.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 233.000000000000000000
+        Position.Y = 4.000000000000000000
+        Size.Width = 65.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Text = 'Go!'
+        OnClick = GoBtnClick
+      end
+    end
+    object PanelLoc: TPanel
+      Align = Top
+      Padding.Top = 5.000000000000000000
+      Padding.Bottom = 5.000000000000000000
+      Position.Y = 41.000000000000000000
+      Size.Width = 513.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object LocRecLabel: TLabel
+        Align = Left
+        StyledSettings = [Family, Style]
+        Margins.Left = 15.000000000000000000
+        Position.X = 15.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 146.000000000000000000
+        Size.Height = 23.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.FontColor = claGreen
+        Text = 'No location recorded'
+        TabOrder = 0
+      end
+      object LocDetailBtn: TSpeedButton
+        Position.X = 161.000000000000000000
+        Position.Y = -11.000000000000000000
+        Size.Width = 48.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'detailstoolbutton'
+        Visible = False
+        OnClick = LocDetailBtnClick
+      end
+    end
+    object PanelTitle: TPanel
+      Align = Top
+      Size.Width = 513.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      object LabelTitle: TLabel
+        Align = Center
+        StyledSettings = [Size, Style]
+        Size.Width = 244.000000000000000000
+        Size.Height = 23.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Comic Sans MS'
+        TextSettings.FontColor = claRed
+        TextSettings.HorzAlign = Center
+        Text = 'Hey dude: where is my car?'
+        TabOrder = 0
+      end
+    end
+    object WebBrowser1: TWebBrowser
+      Align = Client
+      Size.Width = 513.000000000000000000
+      Size.Height = 433.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object MultiView1: TMultiView
+    TargetControl = Layout1
+    DrawerOptions.Mode = PushingDetailView
+    Size.Width = 250.000000000000000000
+    Size.Height = 587.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    object ToolBarTopMW: TToolBar
+      Size.Width = 250.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      TintColor = claMediumspringgreen
+      object MWTitleLabel: TLabel
+        Align = Center
+        StyledSettings = [Family]
+        Size.Width = 114.000000000000000000
+        Size.Height = 23.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.HorzAlign = Center
+        Text = 'Your car is at'
+        TabOrder = 0
+      end
+      object HideMWBtn: TButton
+        Align = Left
+        Size.Width = 48.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'backtoolbutton'
+        TabOrder = 1
+        OnClick = HideMWBtnClick
+      end
+    end
+    object ListBox1: TListBox
+      Align = Client
+      Size.Width = 250.000000000000000000
+      Size.Height = 539.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      DisableFocusEffect = True
+      DefaultItemStyles.ItemStyle = ''
+      DefaultItemStyles.GroupHeaderStyle = ''
+      DefaultItemStyles.GroupFooterStyle = ''
+      Viewport.Width = 250.000000000000000000
+      Viewport.Height = 539.000000000000000000
+      object ListBoxGroupHeader1: TListBoxGroupHeader
+        TextSettings.Font.Size = 14.000000000000000000
+        Size.Width = 250.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Car location'
+      end
+      object ListBoxItemLatitude: TListBoxItem
+        TextSettings.Font.Size = 14.000000000000000000
+        StyledSettings = [Family, Style, FontColor, Other]
+        Position.Y = 30.000000000000000000
+        TabOrder = 1
+        Text = 'Latitude'
+      end
+      object ListBoxItemLongitude: TListBoxItem
+        TextSettings.Font.Size = 14.000000000000000000
+        StyledSettings = [Family, Style, FontColor, Other]
+        Position.Y = 74.000000000000000000
+        TabOrder = 2
+        Text = 'Longitude'
+      end
+      object ListBoxGroupHeader2: TListBoxGroupHeader
+        TextSettings.Font.Size = 14.000000000000000000
+        Position.Y = 118.000000000000000000
+        Size.Width = 250.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Text = 'Car address'
+      end
+      object ListBoxItemStreetNo: TListBoxItem
+        TextSettings.Font.Size = 14.000000000000000000
+        StyledSettings = [Family, Style, FontColor, Other]
+        Position.Y = 148.000000000000000000
+        TabOrder = 4
+      end
+      object ListBoxItemNBhood: TListBoxItem
+        TextSettings.Font.Size = 14.000000000000000000
+        StyledSettings = [Family, Style, FontColor, Other]
+        Position.Y = 192.000000000000000000
+        TabOrder = 5
+      end
+      object ListBoxItemCity: TListBoxItem
+        TextSettings.Font.Size = 14.000000000000000000
+        StyledSettings = [Family, Style, FontColor, Other]
+        Position.Y = 236.000000000000000000
+        TabOrder = 6
+      end
+      object ListBoxItemZipcode: TListBoxItem
+        TextSettings.Font.Size = 14.000000000000000000
+        StyledSettings = [Family, Style, FontColor, Other]
+        Position.Y = 280.000000000000000000
+        TabOrder = 7
+      end
+      object ListBoxItemCountry: TListBoxItem
+        TextSettings.Font.Size = 14.000000000000000000
+        StyledSettings = [Family, Style, FontColor, Other]
+        Position.Y = 324.000000000000000000
+        TabOrder = 8
+      end
+    end
+  end
+  object LocationSensor1: TLocationSensor
+    Distance = 1.000000000000000000
+    OnLocationChanged = LocationSensor1LocationChanged
+    Left = 560
+    Top = 360
+  end
+  object ImageList1: TImageList
+    Source = <
+      item
+        MultiResBitmap.Height = 18
+        MultiResBitmap.Width = 18
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 18
+            Height = 18
+            PNG = {
+              89504E470D0A1A0A0000000D494844520000001200000012080600000056CE8E
+              57000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              01F249444154384F6364C003F6DB6BF1307CFFA7C3C4CCCCC4C8CC7ADBEEC885
+              D750290C80D5A0BD165ACB99191923A05C14F0FFF7DF570E676E480235FE830A
+              81018A413B5DF5B8D9BFFCFD02E5E205408DD6F6C7AF1E83721998A034C34C63
+              6356620D0181FF0C0C470F586A9B42B90883D4587FFC80325180E99A1D0CD291
+              09501E0638053410EC2BB041FB2C74EC191911862283BB7D6D4095FF19983838
+              A122A8E0A085C679100D360DE844A0C1A88055508841213D9F41D4D59381898D
+              9DE1E3F9D30C8FE6CF04D3E8C0E1F855A03B80009B4130C026240C34CC8BE1E9
+              CAC550114CF09F4D8415AB779001C886FFFFFE4238B8C0CFD70A040D62F8FF9F
+              E1FF5FFC06FD63FCFF1BAB41228EAE501604FCFF8330483E390BCA4200E7E3D7
+              1F420CFACBF0134C43C1F7C78F18AC0F9C8370402E821AA43F7B1983A88B2798
+              8D0EC0817DC44A9DF7CF7F964F60112810B2B263D0EA9CCCF0F3CD2B06761131
+              6038FD6378BE7639C3BDC9DD60C361E01FE3BF00A763D737820D0281BD96EA8F
+              98195864A15C3060646262D068EE65E0D5D567381BE6CDF0F7C777A80C04008D
+              FBE578FC2A3B880D37080476586A7DE36060C49EF2B00050FA81325153B3C7F1
+              6B5CFFFFFFBB07E5E201FF3F221B020218B1E678E2BAF2A75F1CDC4067BF830A
+              21C0B32F7F80459390C3F16B0250116A03060600234A9C2616EE1B3F00000000
+              49454E44AE426082}
+            FileName = 
+              'C:\fernando\projdelphi\provas rad studio\where is my car\icons8-' +
+              'anchor-67.png'
+          end>
+        Name = 'Item 0'
+      end
+      item
+        MultiResBitmap.Height = 24
+        MultiResBitmap.Width = 24
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 24
+            Height = 24
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+              F8000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              047349444154484BA5956B4C5C4514C7FF7BF74159D8652F2CA42CB02F60357D
+              A44D4D4D348A7E03012B217E3034FA453F348A466DCAA218BA8DA9F611D140A2
+              B62A266A624C6B84C48860488B36A531A24DA1568C42914269792D4FD995E578
+              66F64A775D5A8CFD25933B77E6CE3967CEFCCF5C1D315887898909ACACAC4055
+              55188D466DF43F221CAC454D4D8D704CF7171828B02B990295C9F4E80EA31C2B
+              2B2BA35028A47D796B1276D0DADA8A8A8A0A5C6EB4C195A4039275084E4630B7
+              04E4E5E98179C202AF70EE0DE2EEA262B4B5B5692B6F8274A3D1D0D040957719
+              898EA974AAC6428A0EB46D731275366753CF891C7AECE1544A352B54B593BF39
+              AE526FBD95B2B3B3B5D56BB3EAA0A5A5852A3905F49E4AE9293A6A3A9849F46B
+              3ED1452F515F4CE3F7FEEF5C3255F4A14AA76B2D545C5CAC594964D5815CC091
+              0BE3533F79A4B1C3AFD869B2C72DFB175A72E553BC8B71EACF271DEF909A55DA
+              94ABD7AC2422CFC0EFF7E3E9BCE3181C8EA02F6D03AA1FB1C8F449F81804BDBF
+              85B1B5C0C46144DF05F3DC8A1E1AC28FF55664F875989C9C8C4EC4221CC80747
+              2F72BE9A929FBD6457153917DB326C4A5CDAEEDD9E44A17755DA6895B126A0F0
+              22B014A55AB66E4A8A9A61CEF787E1AF3B820B7D17E1F67830333B87AB63D7F0
+              D9C96FD0F0D14CF423A6717F26CE0D2CE3EB5A2B3A3B3BB5D118C6C7C7A5CEA7
+              1AD2A45A82E73D74873BAA778FC74B6EB79B0C0603F97C3E2A2828904DCCE5E7
+              1A887E61110CE6D3833E038D34DA2810086871DFC0202A14BC8159D6B9CDA2E0
+              AD4F679155F73B725233B0F2578873B602970CE5064E931991A53938EE7360F4
+              7B3766FE247085AC8962B3D9D07779192EA71E47B5AD2F8D0FE3F46E0BCEECF1
+              60FE8FDEB836F8F9EBF8F6712B065B8E629963BB3E16C19EA2244C2D03BC4BB9
+              3E0EB10DF9E08312454497BC74E5948B144521D5AAD0A52F73E3DAFE675532E8
+              0DF23976C6452F3E9146134D362ADDC235B406F2E84B4B4B7162D7393CF5C13C
+              0E1CC9862F8B73B681F51962DFDAA10B11805311D7E7BC98B60C20FCB60A53F5
+              3CC2E170743E16E1405C5CAA997D71F9CB212E2221C1C3F576BADEC345C7B2DC
+              688F97A768769B9E82EFD8A869B799BABABA84A904562FBB9292121CDA7916DB
+              BD06284F4E63B6D78B5431B1161C79E63D43F8AA3A059B5D7AA8CF2C809586A1
+              A121D8ED76ED230DE946232B2B4B5E72A2FCB771F98B22FAE10BBE22588A3490
+              4FD7CEBA65CE8D7AD00C47BEC0F79630119C99954F73B29984EC63897320282F
+              2FA73B1D7CB7F0E2253EF8AE7D167A8075BEC3A9A7639C0A71A0A2EA1BABCC64
+              3299A471FE09D1CBB5AFD24BFE03B21FCB6A8AFE4D7A7A3A4C9120DAB9423353
+              74D0F3B90A29EE6B5E40473FD0DEDE0E0E068B8B8B60E3FCC78B682B8137DE3C
+              88D1D15199AE9B3AF8878E8E0E747777CB7E616121AAAAAA645F207EA54EA70B
+              CF3FE71799D046B9B81405AF1DAA9763EB3A580FE1C4E17060EF0B75DA48948F
+              3F791F574686212FBBDB41A441E85FA445442E50143D46AF8EC87EC221FF5F84
+              7A84B91C472EFF8874343D3D2DC76F3B45B706F81B1342DD2668F7F634000000
+              0049454E44AE426082}
+            FileName = 
+              'C:\fernando\projdelphi\provas rad studio\where is my car\searchc' +
+              'ar.bmp'
+          end>
+        Name = 'Item 1'
+      end
+      item
+        MultiResBitmap.Height = 28
+        MultiResBitmap.Width = 32
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 32
+            Height = 28
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000200000001C080600000000C2BD
+              22000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              043449444154484BAD974B6C1B4518C7BFD947ECD68F348F46152EA889D756A9
+              23B522E44448CAC9B9244D3920C4851E68AB5E9A2071E084B8734180A8484E20
+              90680129A92AA52E121484401CE05204B471EAC4B163C7A944E2C4B11DEFEEF0
+              CD66C7C4B1BDDED8FCA59563CF64FEBFF91E333681FF496F8C8E5E14287D07FF
+              3C8DCFDFB8F0BB9F442273C6A08544F3B5255D191D1D23AAFA11485250727925
+              5D2D9D00551D1A0806A3BF45A38FCC6935D5320033D774FD862049277B86C7E0
+              E957AE0110023B89452F7E3E3C18082C5841B40470391C1ED729BD218AA2AF67
+              641C7C1397C0D1751C3C4A3FE88502E4E30B0D219A06603BFFCF7C0C7CE39740
+              701E01D03100928C10215B104D01F0B05799537302CA2EC4A1012ACD31EC35CC
+              B9EC401C0AA0CAFCC2EB75CDB91A41D806A869EEB036E7B282B0055055ED8730
+              E73A0841810E0DF4F9E30D014CF38F5B31E7E2105A7E0776E20BED8490902500
+              6F3549967DEC90F18D37CE792309B28C67450FFCF3FB4FA0E7B6BA04F3F32AF1
+              9C0B84F8C4A31EE81C1C01F1686BE6801784562CC0939FBF052DB7055496A335
+              23C0CDDB24C9E7713A61072717D309709D7A16646F7B731068AE17F390BCFD19
+              ACDF9F8352B1981225E9ED2A006E2E61CE5FF2FB61E2CC19486F6D416A2506F9
+              C46370F73601C1CDE73E85CC0FB7F18DBE8677C7D4F4FCFCAD0A800AF3BE3EB8
+              100AC171970BFC9D9D90AC80388D10C7EC411C34A7FA1A25646AE6EEDD5B384A
+              CB00BCD5F69B3B2509A75070631AFC5D5D90CC664D8898BD481C30D755354D04
+              E13A9A7F85A3C67F1A00E56AAF61CEE576388C4824106235B10485640C5CFE10
+              C81E6F6D0866BE5B3072CEC3CECCA7F7CCCB12AF84C32F63483E1405E1E4F9DE
+              5E9860E6D82AFBCDB958247A3B3A6025BB09E9952528A6E258982C1D0722619A
+              AFDEF9020B6E16545DCFE04EDF9C8E4458D82B249EF3FB6FA279E03CEEFC627F
+              7F5D732ED6157D1D9D06442AFE782F12FBD361867DF5CEE790F97E164A9A96C1
+              15A7F0EBD997385AB5B0784E513E38E67008AF9E3D0B1D47589FD737E72A436C
+              6224783A18447B3B1EB566CEB1D554DDDA9C497C2E10780D2BBF1B0F1C087477
+              03D68139642D0382758759980CC279E214EE7ACEC8390B7B2373267150513238
+              FAC2D2C686A7A8AA4D4124B045D3C965C83EF815B6A30F402F95D278774C62C1
+              DDC469962115F14AFCEB794559D6346D787973D3CD209443423CE5F5C21F6B6B
+              90CB65B1D5B43408C2E4FE56B392E182107F0E0683B5213035560F9BFBDDE222
+              3C5A5F074DD3D382285E9F8944BEC6651B9A3395B7C92231A028B112212FAE60
+              3AB2786FB3A2D4B028F3BBBB902F952A1F34CE6C6FC3FCC387F0632C06454A53
+              F25E9F7F83CBD93267C26D548AFDC2C12FB6EF23D933EEB63670B003A98E0A08
+              9143380D202E11328967FBAC39645B55002872351C1ED108790B171E9228C506
+              AFAB0D5CE0174AE97B33F7EEDDC7F7B677BE27807F01FE26917B3B43B2CC0000
+              000049454E44AE426082}
+            FileName = 
+              'C:\fernando\projdelphi\provas rad studio\where is my car\rubber_' +
+              '96712.png'
+          end>
+        Name = 'Item 2'
+      end>
+    Destination = <
+      item
+        Layers = <
+          item
+            Name = 'Item 0'
+            SourceRect.Right = 18.000000000000000000
+            SourceRect.Bottom = 18.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'Item 1'
+            SourceRect.Right = 26.000000000000000000
+            SourceRect.Bottom = 26.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'Item 2'
+            SourceRect.Right = 32.000000000000000000
+            SourceRect.Bottom = 28.000000000000000000
+          end>
+      end>
+    Left = 424
+    Top = 361
+  end
+end

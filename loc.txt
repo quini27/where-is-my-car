@@ -1,0 +1,6 @@
+yes
+-34.591918 
+-58.414919 
+
+
+Filename: /data/user/0/com.embarcadero.Where_is_my_car/files/loc.txt
